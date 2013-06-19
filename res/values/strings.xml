@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Reset Unread Message Count</string>
+    <string name="action_settings">Settings</string>
+    <string name="mark_all_messages_read">Mark All Messages Read</string>
+    <string name="warning"><b>Warning: Only click the button if the information below doesn\'t seem bogus! If any of the information below doesn\'t make sense, just delete this stupid application!</b></string>
+
+</resources>
