@@ -50,20 +50,20 @@ public class MainActivity extends Activity {
 				"read = 0", null, null);
 		int unreadMessagesCount = cursor.getCount();
 		markAllMessagesInCursorRead(SMS_INBOX_URI);
-		cursor.close();
 		Toast.makeText(this,
-				"Marked " + unreadMessagesCount + " SMS messages as read.",
+				"Marked " + (unreadMessagesCount - cursor.getCount()) + " SMS messages as read.",
 				Toast.LENGTH_SHORT).show();
+		cursor.close();
 
 		final Uri MMS_INBOX_URI = Uri.parse("content://mms");
 		cursor = getContentResolver().query(MMS_INBOX_URI, null, "read = 0",
 				null, null);
 		unreadMessagesCount = cursor.getCount();
 		markAllMessagesInCursorRead(MMS_INBOX_URI);
-		cursor.close();
 		Toast.makeText(this,
-				"Marked " + unreadMessagesCount + " MMS messages as read.",
+				"Marked " + (unreadMessagesCount - cursor.getCount()) + " MMS messages as read.",
 				Toast.LENGTH_SHORT).show();
+		cursor.close();
 		
 		refreshInfo();
 	}
