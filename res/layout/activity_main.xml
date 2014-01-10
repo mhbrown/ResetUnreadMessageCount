@@ -25,5 +25,11 @@
         android:text="@string/mark_all_messages_read"
         android:layout_below="@+id/text_info"
         android:onClick="onClickMarkAllMessagesRead" />
+    <TextView
+        android:id="@+id/text_jellybean_or_earlier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jellybean_or_earlier"
+        android:layout_below="@+id/button_mark_all_messages_read" />
 
 </RelativeLayout>
