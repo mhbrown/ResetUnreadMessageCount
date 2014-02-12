@@ -5,6 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="mark_all_messages_read">Mark All Messages Read</string>
     <string name="warning"><b>Warning: Only click the button if the information below doesn\'t seem bogus! If any of the information below doesn\'t make sense, just delete this stupid application!</b></string>
-    <string name="jellybean_or_earlier"><b>Note: This application does NOT work on Android 4.4 KitKat or later.</b></string>
+    <string name="default_app_notice"><b>Note: For this application to work on Android 4.4 KitKat or later, it temporarily needs to be set as the Default SMS app in Settings.</b></string>
 
 </resources>

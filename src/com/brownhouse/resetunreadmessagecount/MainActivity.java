@@ -49,20 +49,20 @@ public class MainActivity extends Activity {
 		Cursor cursor = getContentResolver().query(SMS_INBOX_URI, null,
 				"read = 0", null, null);
 		int unreadMessagesCount = cursor.getCount();
-		markAllMessagesInCursorRead(SMS_INBOX_URI);
+		int messagesMarkedRead = markAllMessagesInCursorRead(SMS_INBOX_URI);
 		cursor.close();
 		Toast.makeText(this,
-				"Marked " + unreadMessagesCount + " SMS messages as read.",
+				"Marked " + messagesMarkedRead + " out of " + unreadMessagesCount + " SMS messages as read",
 				Toast.LENGTH_SHORT).show();
 
 		final Uri MMS_INBOX_URI = Uri.parse("content://mms");
 		cursor = getContentResolver().query(MMS_INBOX_URI, null, "read = 0",
 				null, null);
 		unreadMessagesCount = cursor.getCount();
-		markAllMessagesInCursorRead(MMS_INBOX_URI);
+		messagesMarkedRead = markAllMessagesInCursorRead(MMS_INBOX_URI);
 		cursor.close();
 		Toast.makeText(this,
-				"Marked " + unreadMessagesCount + " MMS messages as read.",
+				"Marked " + messagesMarkedRead + " out of " + unreadMessagesCount + " MMS messages as read",
 				Toast.LENGTH_SHORT).show();
 		
 		refreshInfo();
@@ -88,10 +88,10 @@ public class MainActivity extends Activity {
 				+ mmsUnreadMessagesCount + "\n");
 	}
 
-	private void markAllMessagesInCursorRead(Uri uri) {
+	private int markAllMessagesInCursorRead(Uri uri) {
 		ContentValues values = new ContentValues();
 		values.put("read", true);
-		getContentResolver().update(uri, values, "read = 0", null);
+		return getContentResolver().update(uri, values, "read = 0", null);
 	}
 	
 	private void registerBroadcastReceiver() {

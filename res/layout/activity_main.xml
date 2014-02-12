@@ -26,10 +26,10 @@
         android:layout_below="@+id/text_info"
         android:onClick="onClickMarkAllMessagesRead" />
     <TextView
-        android:id="@+id/text_jellybean_or_earlier"
+        android:id="@+id/text_default_app_notice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jellybean_or_earlier"
+        android:text="@string/default_app_notice"
         android:layout_below="@+id/button_mark_all_messages_read" />
 
 </RelativeLayout>
